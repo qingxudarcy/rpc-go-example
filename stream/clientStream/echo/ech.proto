@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "stream/clientStream/echo";
+
+package serverEcho;
+
+
+// Echo 服务，包含了4种类型API
+service Echo {
+  // ClientStreamingE
+  rpc ClientStreamingEcho(stream EchoRequest) returns (EchoResponse) {}
+}
+
+message EchoRequest {
+  string message = 1;
+}
+
+message EchoResponse {
+  string message = 1;
+}
